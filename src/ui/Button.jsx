@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
 export default function Button({
-    type = "primary",
-    to,
     disabled = false,
+    onClick,
+    to,
+    type = "primary",
     children,
 }) {
     const base =
@@ -21,6 +22,17 @@ export default function Button({
             <Link className={styles[type]} to={to}>
                 {children}
             </Link>
+        );
+
+    if (onClick)
+        return (
+            <button
+                className={styles[type]}
+                onClick={onClick}
+                disabled={disabled}
+            >
+                {children}
+            </button>
         );
 
     return (
