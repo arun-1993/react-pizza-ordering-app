@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 
 import { createOrder } from "../../services/apiRestaurant";
@@ -33,6 +34,7 @@ const fakeCart = [
 ];
 
 export default function CreateOrder() {
+    const username = useSelector((state) => state.user.username);
     const formErrors = useActionData();
     const navigation = useNavigation();
     const isSubmitting = navigation.state === "submitting";
@@ -52,6 +54,7 @@ export default function CreateOrder() {
                             className="input w-full"
                             type="text"
                             name="customer"
+                            defaultValue={username}
                             required
                         />
                     </div>
