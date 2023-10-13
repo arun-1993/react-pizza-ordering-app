@@ -19,6 +19,8 @@ export default function Order() {
         estimatedDelivery,
         cart,
     } = order;
+
+    console.log(order);
     const deliveryIn = calculateMinutesLeft(estimatedDelivery);
 
     return (
