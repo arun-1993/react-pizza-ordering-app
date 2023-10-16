@@ -20,7 +20,6 @@ export default function Order() {
         cart,
     } = order;
 
-    console.log(order);
     const deliveryIn = calculateMinutesLeft(estimatedDelivery);
 
     return (
