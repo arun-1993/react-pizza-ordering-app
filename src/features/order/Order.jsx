@@ -8,6 +8,7 @@ import {
     formatDate,
 } from "../../utils/helpers";
 import OrderItem from "./OrderItem";
+import UpdateOrder from "./UpdateOrder";
 
 export default function Order() {
     const order = useLoaderData();
@@ -92,6 +93,8 @@ export default function Order() {
                     {formatCurrency(orderPrice + priorityPrice)}
                 </p>
             </div>
+
+            {!priority && <UpdateOrder />}
         </div>
     );
 }
